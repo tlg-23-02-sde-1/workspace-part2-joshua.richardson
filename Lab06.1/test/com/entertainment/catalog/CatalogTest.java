@@ -32,6 +32,17 @@ public class CatalogTest {
     });
   }
 
+  @Test
+  public void bonusPage172_findTheLoudest(){
+    Television loudest = Collections.max(Catalog.getInventory(), new Comparator<Television>() {
+      @Override
+      public int compare (Television tv1, Television tv2){
+        return Integer.compare(tv1.getVolume(), tv2.getVolume());
+      }
+    });
+    System.out.println(loudest);
+  }
+
 
   @Test
   public void testFindByBrandNoMatches() {
